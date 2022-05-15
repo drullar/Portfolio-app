@@ -22,9 +22,9 @@ h1 {
 }
 
 .gallery-image{
-    width: 10%;
-    position: absolute;
-    margin-right: 5%;
+    width: 15%;
+    height: 15%;
+    position:relative;
     
 }
 
@@ -32,6 +32,7 @@ h1 {
     border: 3px inset rgb(252, 244, 218);
     border-radius: 50%;
     margin-bottom: 5px;
+    background-color: aliceblue;
     width: 25px;
     height: 25px;
 }
