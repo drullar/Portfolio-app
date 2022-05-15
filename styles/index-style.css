@@ -1,0 +1,37 @@
+@font-face {
+    font-family: Gidole;
+    src: url(fonts/Gidole-Regular.ttf);
+  }
+
+.background {
+    background-color: rgb(43, 42, 51);
+}
+
+h1 {
+    text-align:start;
+}
+
+.links-text {
+    font-size:100%;
+    margin-bottom : 5px;
+}
+
+.text-format {
+    font-family: Gidole, Geneva, Tahoma, sans-serif;
+    color: rgb(252, 244, 218);
+}
+
+.gallery-image{
+    width: 10%;
+    position: absolute;
+    margin-right: 5%;
+    
+}
+
+.link-icons {
+    border: 3px inset rgb(252, 244, 218);
+    border-radius: 50%;
+    margin-bottom: 5px;
+    width: 25px;
+    height: 25px;
+}
