@@ -8,12 +8,19 @@
 }
 
 h1 {
-    text-align:end;
+    text-align:start;
+    border-style:inset;
+    margin-left: 0%;
+    margin-right: 71%;
+    border-color: rgb(252, 244, 218);
+    border-width: 5px;
+    margin-bottom: 0%;
 }
 
 .links-text {
     font-size:100%;
     margin-bottom : 5px;
+    margin-top: 1%;
 }
 
 .text-format {
@@ -32,7 +39,12 @@ h1 {
     border: 3px inset rgb(252, 244, 218);
     border-radius: 50%;
     margin-bottom: 5px;
+    margin-top:0%;
     background-color: aliceblue;
     width: 25px;
     height: 25px;
+}
+
+.navbar {
+    margin-bottom: 1%;
 }
