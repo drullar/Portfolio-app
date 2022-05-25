@@ -8,7 +8,7 @@
 }
 
 h1 {
-    text-align:start;
+    text-align:end;
 }
 
 .links-text {
@@ -22,8 +22,8 @@ h1 {
 }
 
 .gallery-image{
-    width: 15%;
-    height: 15%;
+    max-width: 100%;
+    height: auto;
     position:relative;
     
 }
