@@ -23,14 +23,6 @@
         document.getElementById("main").style.marginLeft = "0";
     } 
     function zoom(id){
-        if (document.getElementById(id).style.maxWidth == "5%"){
-            document.getElementById(id).style.maxWidth = "100%";
-            document.getElementById(id).style.position = 'center';
-        }
-        else if (document.getElementById(id).style.maxWidth == "100%"){
-            document.getElementById(id).style.maxWidth = "5%";
-            document.getElementById(id).style.position = 'relative';
-        }
         
     }
     </script>
@@ -65,10 +57,22 @@
     <div id = "Gallery">
         {% for hist in hists %}
         <span>
-            <img class ="gallery-image" onclick="zoom(this.id)" src="{{url_for('static', filename=hist)}}" alt="{{hist}}" id = {{hist}}>
+            <img class ="gallery-image" onclick="onClick(this)" src="{{url_for('static', filename=hist)}}" alt="{{hist}}" id = {{hist}}>
         </span>
         {% endfor %}
 </div>
-</body>
 
+<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+    <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+    <div class="w3-modal-content w3-animate-zoom">
+      <img id="img01" style="width:100%">
+    </div>
+  </div>
+</body>
+<script>
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+      }
+</script>
 </html>
