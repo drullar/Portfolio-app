@@ -10,59 +10,64 @@
     <meta name="description" content="Art Portfolio">
     <meta name="author" content="Antonio Busuladzich">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    } 
+    function zoom(id){
+        if (document.getElementById(id).style.maxWidth == "5%"){
+            document.getElementById(id).style.maxWidth = "100%";
+            document.getElementById(id).style.position = 'center';
+        }
+        else if (document.getElementById(id).style.maxWidth == "100%"){
+            document.getElementById(id).style.maxWidth = "5%";
+            document.getElementById(id).style.position = 'relative';
+        }
+        
+    }
+    </script>
 </head>
 
 <body class = "background">
-    
     <div>
         <img class = "title-image" src = "/static/resources/icons/137904_fhLsAbSE.png" alt = "title-image">
         <h1 class = "text-format">Art Portfolio | By Antonio Busuladzich</h1>
     </div>
     <hr>
-    <div class="navbar">
-        <a>About</a>
-        <div class="dropdown">
-            <button class="dropbtn">Dropdown 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="#">Project View</a>
-              <a href="#">Gallery View</a>
-            </div>
-          </div> 
-    </div>
     <div style="text-align: end;" id = "links">
-        <p class = "links-text text-format" > Links </p>
-        <div>
-        <a href="https://github.com/drullar/Portfolio-site" target="_blank" alt="source code" title="Source code">
-            <img class="link-icons" src="/static/resources/icons/github.png" alt="github icon"></a>
-        </div>
-        <div><a href="https://www.linkedin.com/in/antonio-busuladzic-aa9201148/" target="_blank" alt="linkedin" title = "LinkedIn">
-            <img class="link-icons" src="/static/resources/icons/linkedin.png" alt="linked icon"></a>
-        </div>
-        <div><a href ="mailto:porfolio+antonio.busuladzich@gmail.com" target="_blank" title="mailto:porfolio+antonio.busuladzich@gmail.com">
-            <img class="link-icons" src="/static/resources/icons/gmail.png" alt="gmail icon" target="_blank"></a>
-        </div>
-        <div><a href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ" alt="youtube" target="_blank" title = "Youtube Channel">
-            <img class="link-icons" src="/static/resources/icons/YouTube_social_red_circle_(2017).svg" alt="youtube icon"></a>
-        </div>
-        <div>
+        
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="https://github.com/drullar/Portfolio-site" target="_blank" alt="source code" title="Source code">
+                Source Code<img class="link-icons" src="/static/resources/icons/github.png" alt="github icon"></a>
+            <a href="https://www.linkedin.com/in/antonio-busuladzic-aa9201148/" target="_blank" alt="linkedin" title = "LinkedIn">
+                LinkedIn<img class="link-icons" src="/static/resources/icons/linkedin.png" alt="linked icon"></a>
+            <a href ="mailto:porfolio+antonio.busuladzich@gmail.com" target="_blank" title="mailto:porfolio+antonio.busuladzich@gmail.com">
+                Contacts<img class="link-icons" src="/static/resources/icons/gmail.png" alt="gmail icon" target="_blank"></a>
+            <a href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ" alt="youtube" target="_blank" title = "Youtube Channel">
+                Youtube Secret<img class="link-icons" src="/static/resources/icons/YouTube_social_red_circle_(2017).svg" alt="youtube icon"></a>
             <a href="https://www.blender.org/" alt="blender" target="_blank" title = "Blender Software">
-                <img class="link-icons" src="/static/resources/icons/blender.svg" alt="blender icon"></a>
-        </div>
-    </div>
+                Blender<img class="link-icons" src="/static/resources/icons/blender.svg" alt="blender icon"></a>
+          </div>
+          
+          <div id="main">
+            <button class="openbtn" onclick="openNav()">&#9776;Links</button>
+          </div>
+
     <div id = "Gallery">
-    <span>
-        <img class ="gallery-image" src="/static/resources/gallery-images/blender_well.png" title="Blender well 1">
-    </span>
-    
-    <span>
-        <img class ="gallery-image" src="/static/resources/gallery-images/untitled.png" title="Blender well 2">
-    </span>
-    <span>
-        <img class ="gallery-image" src="/static/resources/gallery-images/saber-emitter.png" title="Saber emitter">
-    </span>
-    
+        {% for hist in hists %}
+        <span>
+            <img class ="gallery-image" onclick="zoom(this.id)" src="{{url_for('static', filename=hist)}}" alt="{{hist}}" id = {{hist}}>
+        </span>
+        {% endfor %}
 </div>
 </body>
 
