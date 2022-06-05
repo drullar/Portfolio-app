@@ -1,3 +1,3 @@
 #!/bin/bash
-# Conda activate portfolio
-# python3 app.py
+conda activate portfolio
+python3 app.py

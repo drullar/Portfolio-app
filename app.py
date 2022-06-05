@@ -2,6 +2,11 @@ import os
 from flask import Flask, render_template
 app = Flask(__name__,  template_folder='template', static_folder='static')
 
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    return render_template('about.html')
+
+
 @app.route('/')
 def index():
     images = os.listdir('static/gallery-images')

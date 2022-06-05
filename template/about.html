@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="stylesheet" media="screen and (min-width:1025px)"
+        href="{{ url_for('static',filename='styles/style-sheet.css')}}" />
+    <link rel="stylesheet" media="screen and (max-width:480px)"
+        href="{{ url_for('static',filename='styles/style-mobile.css')}}" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='resources/favicon.ico')}}" />
+</head>
+
+<body class="background">
+    <div class="title">
+        <a href="{{url_for('index')}}">
+            <img class="title-image" src="/static/resources/icons/137904_fhLsAbSE.png" alt="title-image">
+            <h1 class="title-text text-format">ART portfolio ~ {About}</h1>
+        </a>
+        <span id="Menu">
+            <button class="openbtn" onclick="openNav()">&#9776;</button>
+        </span>
+    </div>
+    <div class = "about_text">
+        <h2 class = "text-format">
+            ABOUT this website
+        </h2>
+        <pre class = 'text-format'>
+        This WebSite is a project created as a Project for TCMB117 in New Bulgarian
+        University. Most of the artwork displayed in the website is 
+        create by me, using Blender;</pre>
+    </div>
+</body>
+</html>

@@ -3,25 +3,29 @@
     src: url(fonts/Gidole-Regular.ttf);
   }
 
+.title {
+  position: start;
+  width: 30%;
+  margin-top:0px;
+}
+
 .background {
     background-color: rgb(43, 42, 51);
+    
 }
 
 .title-image{
-    width: 100px;
-    height: 100px;
-    margin-bottom: -50px;
+    width: 50px;
+    height: 50px;
+    padding-right: 50px;
+    margin-bottom: -40px;
 }
 
 h1 {
-    text-align:start;
-    border-style:inset;
-    margin-left: 105px;
-    margin-top: 0px;
-    margin-right: 71%;
-    border-color: rgb(252, 244, 218);
-    border-width: 5px;
-    margin-bottom: 0%;
+    text-align:left;
+    margin-top: -5px;
+    padding-left: 50px;
+    font-size: 40px;
 }
 
 .links-text {
@@ -30,16 +34,32 @@ h1 {
     margin-top: 1%;
 }
 
+.about_text{
+  font-size:x-large;
+  text-align: relative;
+  padding-left: 0%;
+  display:block;
+}
+
+.about_text h2{
+  padding-left:3%;
+}
+
 .text-format {
     font-family: Gidole, Geneva, Tahoma, sans-serif;
     color: rgb(252, 244, 218);
 }
 
 .gallery-image{
-    max-width: 5%;
+    max-width: 50%;
     height: auto;
-    position:relative;
-    
+    position:center;
+}
+
+.gallery{
+  position:left;
+  width: 100%;
+  height: auto;
 }
 
 .link-icons {
@@ -50,12 +70,12 @@ h1 {
     background-color: aliceblue;
     width: 25px;
     height: 25px;
+    position: center;
 }
 
 .navbar {
     margin-bottom: 1%;
 }
-
  /* The sidebar menu */
  .sidebar {
     height: 100%; /* 100% Full-height */
@@ -83,6 +103,7 @@ h1 {
   /* When you mouse over the navigation links, change their color */
   .sidebar a:hover {
     color: #f1f1f1;
+    text-decoration: underline;
   }
   
   /* Position and style the close button (top right corner) */
@@ -107,7 +128,15 @@ h1 {
   .openbtn:hover {
     background-color: #444;
   }
-  
+
+  .footer{
+    border-top: solid rgb(252, 244, 218);
+    padding-top: 30px;
+    width: 100%;
+    display:flex;
+    align-items: center;
+  }
+
   /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
   #main {
     transition: margin-left .5s; /* If you want a transition effect */
