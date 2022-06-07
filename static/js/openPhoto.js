@@ -1,0 +1,1 @@
+function openPhoto(photoSrc)

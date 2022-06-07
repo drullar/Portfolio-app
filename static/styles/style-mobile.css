@@ -21,7 +21,7 @@
     margin-top: 0px;
     padding-left: 50px;
     font-size: 30px;
-    max-width: 50%;
+    max-width: 100%;
 }
   
   .links-text {
@@ -34,17 +34,24 @@
       font-family: Gidole, Geneva, Tahoma, sans-serif;
       color: rgb(252, 244, 218);
   }
-  
-  .gallery-image{
-      max-width: 50%;
-      height: auto;
-      position:relative;
+   
+  #Gallery ul{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style-type: none;
   }
-  
-  .gallery{
-    position:left;
-    width: 100%;
-    height: auto;
+  #Gallery li{
+    height: 160px;
+    flex-grow: 1;
+  }
+
+  #Gallery img{
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+    cursor:pointer;
   }
   
   .link-icons {
@@ -108,19 +115,63 @@
       padding: 10px 15px;
       border: none;
     }
-    
+
     .openbtn:hover {
       background-color: #444;
     }
     
-    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
     #main {
-      transition: margin-left .5s; /* If you want a transition effect */
+      transition: margin-left .5s;
       padding: 20px;
     }
+    footer{
+      border-top: solid rgb(252, 244, 218);
+      padding-top: 15px;
+      width: 100%;
+    }
+
+    .footer-div a{
+      font-size: 0;
+      margin-top:10px;
+      margin-left: 6%;
+      margin-right: 5%;
+    }
+
+    .about-list{
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .about-list h2{
+      margin-left:-20px;
+    }
     
-    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-    @media screen and (max-height: 450px) {
-      .sidebar {padding-top: 15px;}
-      .sidebar a {font-size: 18px;}
-    } 
+    .description-list {
+      list-style-type:circle;
+      margin-top:5%;
+    }
+    .description-list li{
+      margin-bottom:5px;
+    }
+    
+    .about-text{
+      font-size:x-large;
+      text-align: left;
+      padding-left: 0%;
+      display:block;
+    }
+    
+    #nbu-image{
+      max-width: 300px;
+    }
+
+    .social-icons{
+      margin-left: -20%;
+    }
+  
+    .about-list li{
+      flex-grow: 1;
+      width: 100%;
+    }

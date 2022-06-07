@@ -8,21 +8,21 @@
     <link rel="stylesheet" media="screen and (max-width:480px)"
         href="{{ url_for('static',filename='styles/style-mobile.css')}}" />
     <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='resources/favicon.ico')}}" />
-    <title>Art Portfolio</title>
+    <title>Cad Modelling Portfolio</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="Art, Portfolio, 3D, 2D, Blender">
     <meta name="description" content="Art Portfolio">
     <meta name="author" content="Antonio Busuladzich">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "{{url_for('static', filename='js/menu.js')}}">
-    </script>
+    <script src = "{{url_for('static', filename='js/menu.js')}}"></script>
+    <script src = "{{url_for('static', filename='js/openPhoto.js')}}"></script>
 </head>
 
 <body class="background">
     <div class="title">
         <a href="{{url_for('index')}}">
-            <img class="title-image" src="/static/resources/icons/137904_fhLsAbSE.png" alt="title-image">
-            <h1 class="title-text text-format">ART portfolio</h1>
+            <img class="title-image" src="{{url_for('static', filename='resources/icons/137904_fhLsAbSE.png')}}" alt="title-image">
+            <h1 class="title-text text-format">Cad Modelling portfolio</h1>
         </a>
     </div>
     <span id="main">
@@ -39,47 +39,35 @@
         <ul class = "row">
             {% for hist in hists %}
             <li>
-                <img onclick="onClick(this)" src="{{url_for('static', filename=hist)}}" alt="{{hist}}" id={{hist}}>
+                <img onclick="openPhoto();" src="{{url_for('static', filename=hist)}}" alt="{{hist}}" id="{{hist}}">
             </li>
             {% endfor %}
             
         </ul>
     </div>
-    <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
-        <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
-        <div class="w3-modal-content w3-animate-zoom">
-            <img id="img01" style="width:100%">
-        </div>
-    </div>
     <footer>
         <div class="footer-div">
             <a href="mailto:porfolio+antonio.busuladzich@gmail.com" target="_blank" class="text-format"
                 title="mailto:porfolio+antonio.busuladzich@gmail.com">
-                <img class="link-icons" src="/static/resources/icons/gmail.png" alt="gmail icon"
+                <img class="link-icons" src="{{url_for('static', filename='resources/icons/gmail.png')}} alt="gmail icon"
                     target="_blank">antonio.busuladzich@gmail.com</a>
             <a href="https://github.com/drullar/Portfolio-site" target="_blank" alt="source code"
                 class="text-format footer_links" title="Source code">
-                <img class="link-icons" src="/static/resources/icons/github.png" alt="github icon">
+                <img class="link-icons" src="{{url_for('static', filename='resources/icons/github.png')}}" alt="github icon">
                 Site source code</a>
             <a href="https://www.linkedin.com/in/antonio-busuladzic-aa9201148/" target="_blank" alt="linkedin"
                 class="footer_links text-format" title="LinkedIn">
-                <img class="link-icons" src="/static/resources/icons/linkedin.png" alt="linked icon">LinkedIn</a>
+                <img class="link-icons" src="{{url_for('static', filename='resources/icons/linkedin.png')}}" alt="linked icon">LinkedIn</a>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" alt="youtube" target="_blank"
                 class="footer_links text-format" title="Youtube Channel">
-                <img class="link-icons" src="/static/resources/icons/YouTube_social_red_circle_(2017).svg"
+                <img class="link-icons" src="{{url_for('static', filename='resources/icons/YouTube_social_red_circle_(2017).svg')}}"
                     alt="youtube icon">Easteregg</a>
             <a href="https://www.blender.org/" alt="blender" target="_blank" title="Blender Software"
                 class="footer_links text-format">
-                <img class="link-icons" src="/static/resources/icons/blender.svg" alt="blender icon">Blender
+                <img class="link-icons" src="{{url_for('static', filename='resources/icons/blender.svg')}}" alt="blender icon">Blender
                 Software</a>
             </span>
     </footer>
 </body>
-<script>
-    function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-    }
-</script>
 
 </html>
