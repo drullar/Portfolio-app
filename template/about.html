@@ -2,11 +2,20 @@
 <html lang="en-us">
 
 <head>
+    <!-- <head>  </head>tags = Metadata-->
     <link rel="stylesheet" media="screen and (min-width:1025px)"
         href="{{ url_for('static',filename='styles/style-sheet.css')}}" />
     <link rel="stylesheet" media="screen and (max-width:480px)"
         href="{{ url_for('static',filename='styles/style-mobile.css')}}" />
     <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='resources/favicon.ico')}}" />
+    <title>Art Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Art, Portfolio, 3D, 2D, Blender">
+    <meta name="description" content="Art Portfolio">
+    <meta name="author" content="Antonio Busuladzich">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{url_for('static', filename='js/menu.js')}}">
+    </script>
 </head>
 
 <body class="background">
@@ -15,18 +24,96 @@
             <img class="title-image" src="/static/resources/icons/137904_fhLsAbSE.png" alt="title-image">
             <h1 class="title-text text-format">ART portfolio ~ {About}</h1>
         </a>
-        <span id="Menu">
-            <button class="openbtn" onclick="openNav()">&#9776;</button>
-        </span>
     </div>
-    <div class = "about_text">
-        <h2 class = "text-format">
-            ABOUT this website
-        </h2>
-        <pre class = 'text-format'>
-        This WebSite is a project created as a Project for TCMB117 in New Bulgarian
-        University. Most of the artwork displayed in the website is 
-        create by me, using Blender;</pre>
+    <span id="Menu">
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+    </span>
+    <div style="text-align: end;" id="links">
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="{{url_for('index')}}" class='text-format'>Home </a>
+            <a href="{{url_for('about')}}" class='text-format'>About</a>
+        </div>
+    </div>
+    <div class="about-flex">
+        <ul class="about-list">
+            <li class="about-text">
+                <h2 class="text-format">
+                    ABOUT this website
+                </h2>
+                <pre class='text-format' style="margin-left:-4%">
+        This WebSite is created as a Project for TCMB117 in New Bulgarian
+        University. The artwork displayed in the website is entirely
+        create by me, using <a target="_blank" href="https://www.blender.org/"class="text-format" alt="blender-link">Blender</a></pre>
+                <a target="_blank" id="nbu-redirect"
+                    href="https://ecatalog.nbu.bg/default.asp?V_Year=2018&YSem=6&Spec_ID=&Mod_ID=316&PageShow=coursepresent&P_Menu=courses_part2&Fac_ID=3&M_PHD=&P_ID=2870&TabIndex=4&K_ID=45278&K_TypeID=10">
+                    <img src="{{url_for('static', filename='about/nbu.png')}}" alt="nbu-logo"> </a>
+
+            </li>
+            <li id="about-me" class="about-text">
+                <h2 class="text-format">
+                    ABOUT ME
+                </h2>
+                <ul class="text-format about-text description-list">
+                    PROFESIONAL EXPERIENCE
+                    <li>3 years of Networking engineering experience</li>
+                    <li>1 year (and going) Sys Admin, DevOps and Automation experience</li>
+                </ul>
+                <ul class="text-format about-text description-list">
+                    HOBBIES
+
+                    <li>Gaming - Over<a class="text-format"
+                            href="https://steamdb.info/calculator/76561198108918119/?cc=eu" target="_blank">
+                            9000hrs spent on Steam</a> </li>
+                    <li>Amateur 3D Modelling - some examples shown in the <a href="{{url_for('index')}}"
+                            class='text-format'>
+                            Home page</a></li>
+                    <li>Linguistics: English, Serbo-Croatian, Bulgarian and German</li>
+                    <li>Self hosting applications: Plex, Kavita, PiHole, OpenMediaVault and etc.</li>
+                </ul>
+            </li>
+            <li class="about-text">
+                <h2 class="text-format">
+                    Socials
+                </h2>
+                <ul style="list-style-type: none;">
+                    <li>
+                        <a href="https://www.linkedin.com/in/antonio-busuladzic-aa9201148/" target="_blank"
+                            alt="linkedin" class=" text-format" title="LinkedIn">
+                            <img class="social-icons link-icons" src="/static/resources/icons/linkedin.png"
+                                alt="linkedin icon">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="mailto:porfolio+antonio.busuladzich@gmail.com" target="_blank" class="text-format"
+                            title="mailto:porfolio+antonio.busuladzich@gmail.com">
+                            <img class="social-icons link-icons" src="/static/resources/icons/gmail.png"
+                                alt="gmail icon" target="_blank">antonio.busuladzich@gmail.com</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/drullar/Portfolio-site" target="_blank" alt="source code"
+                            class="text-format social-icons" title="Source code">
+                            <img class="link-icons" src="/static/resources/icons/github.png" alt="github icon">
+                            Site source code</a>
+                    </li>
+                    <li>
+                        <a target="_blank" id="nbu-redirect" class="text-format"
+                            href="https://ecatalog.nbu.bg/default.asp?V_Year=2018&YSem=6&Spec_ID=&Mod_ID=316&PageShow=coursepresent&P_Menu=courses_part2&Fac_ID=3&M_PHD=&P_ID=2870&TabIndex=4&K_ID=45278&K_TypeID=10">
+                            <img class="social-icons link-icons"
+                                src="{{url_for('static', filename='resources/icons/NBUBG-logo.png')}}"
+                                alt="nbu-logo">University
+                            Course Page</a>
+                    </li>
+
+            </li>
+
+        </ul>
+        </li>
+        <li>
+            <img style="max-width:80%; max-height:80%;" src="/static/resources/icons/137904_fhLsAbSE.png"
+                alt="title-image">
+        </li>
+        </ul>
     </div>
 </body>
+
 </html>
